@@ -10,12 +10,12 @@ export const userController = () =>
         })
         .post(
             "/",
-            (context) => {
+            async (context) => {
                 const user = new User();
                 user.firstName = context.body.firstName;
                 user.lastName = context.body.lastName;
                 user.age = context.body.age;
-                AppDataSource.manager.save(user);
+                await AppDataSource.manager.save(user);
                 return {
                     data: {
                         success: "ok",
