@@ -12,8 +12,7 @@ async function server() {
         .use(logger())
         .use(swagger())
         .use(cors())
-        .decorate("db", db)
-        .use(userController)
+        .use(userController(db))
         .listen(Bun.env.PORT || 4000);
     console.log(
         `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`

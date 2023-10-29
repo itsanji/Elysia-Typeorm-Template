@@ -1,11 +1,12 @@
 import Elysia, { t } from "elysia";
-import { AppDataSource } from "../data-source";
 import { User } from "../entity/User";
+import { DataSource } from "typeorm";
 
-export const userController = () =>
+export const userController = (db: DataSource) =>
     new Elysia({ prefix: "/users" })
-        .get("/", () => {
-            const users = AppDataSource.manager.getRepository(User).find();
+        .decorate("db", db)
+        .get("/", (context) => {
+            const users = context.db.manager.getRepository(User).find();
             return users;
         })
         .post(
@@ -15,7 +16,7 @@ export const userController = () =>
                 user.firstName = context.body.firstName;
                 user.lastName = context.body.lastName;
                 user.age = context.body.age;
-                await AppDataSource.manager.save(user);
+                await context.db.manager.save(user);
                 return {
                     data: {
                         success: "ok",
