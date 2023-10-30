@@ -25,45 +25,6 @@
 		},
 		"github-cli": "latest"
 	},
-	"settings": {
-		"workbench.colorTheme": "Visual Studio 2019 Dark",
-		"terminal.integrated.defaultProfile.linux": "zsh",
-		"editor.formatOnPaste": true,
-		"editor.guides.bracketPairs": "active",
-		"scm.defaultViewMode": "tree",
-		"debug.internalConsoleOptions": "neverOpen",
-		"eslint.validate": [
-			"javascript",
-			"typescript"
-		],
-		"eslint.workingDirectories": [
-			{
-				"directory": "./test-project",
-				"changeProcessCWD": true
-			}
-		],
-		"liveServer.settings.NoBrowser": true,
-		"liveServer.settings.port": 5000
-	},
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"humao.rest-client",
-		"github.vscode-pull-request-github",
-		"visualstudioexptteam.vscodeintellicode",
-		"visualstudiotxptteam.vscodeintellicode-completions",
-		"ms-azuretools.vscode-docker",
-		"dbaeumer.vscode-eslint",
-		"christian-kohler.npm-intellisense",
-		"eg2.vscode-npm-script",
-		"ritwickdey.liveserver",
-		"ritwickdey.live-sass",
-		"ms-vscode.wordcount",
-		"editorconfig.editorconfig",
-		"streetsidesoftware.code-spell-checker",
-		"redhat.fabric8-analytics",
-		"redhat.vscode-yaml",
-		"bierner.github-markdown-preview"
-	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "zsh .devcontainer/post-create.zsh",
 	// "overrideCommand": false,
